@@ -6,7 +6,7 @@ import * as serviceFunc from '../../Shared/serviceFunc'
 
 describe('ComponentXyzClass', () => {
 
-  it('09. should component render right html in response to the state', () => {
+  it('09. should render correct html in response to the state', () => {
     const wrapper =  mount(<ComponentXyzClass />)
     
     wrapper.setState({ inputArr: [], inputCurrent: 'foo'})
@@ -20,7 +20,7 @@ describe('ComponentXyzClass', () => {
     expect(wrapper.find('.ComponentXyz__button').html()).toEqual(model)
   });
 
-  it('08. should call method and change state after', () => {
+  it('08. should call class method and change state approprietly', () => {
     const mockFn = jest.fn()
     const wrapper = shallow(<ComponentXyzClass />)
     const outputInputNewVal = wrapper.instance().handleEvents({ type: 'inputNewVal', value: 7 })
@@ -37,7 +37,7 @@ describe('ComponentXyzClass', () => {
     expect(outputOnClickButton).toEqual([7])
   });
 
-  it('07. should call onClick and see the real state after', () => {
+  it('07. should call onClick and change state approprietly', () => {
     const wrapper = shallow(<ComponentXyzClass />)
     wrapper.setState({ inputArr: ['5'], inputCurrent: '7'})
     const event = {
@@ -48,7 +48,7 @@ describe('ComponentXyzClass', () => {
     expect(wrapper.state()).toEqual(model)
   });
 
-  it('06. should call onChange and see the real state after', () => {
+  it('06. should call onChange and change state approprietly', () => {
     const wrapper = shallow(<ComponentXyzClass />)
     const event = {
       target: { value: 7 }
@@ -59,7 +59,7 @@ describe('ComponentXyzClass', () => {
     expect(wrapper.state()).toEqual(model)
   });
 
-  it('05. should call onChange and see what is an input to the mock function', () => {
+  it('05. should respond on onChange event and pass the right args to the mock function', () => {
     const mockFn = jest.fn()
     const wrapper = shallow(<ComponentXyzClass />)
     wrapper.instance().handleEvents = mockFn
@@ -71,7 +71,7 @@ describe('ComponentXyzClass', () => {
     expect(mockFn).toHaveBeenCalledTimes(1)
   });
 
-  it('04. should respond on onClick', () => {
+  it('04. should respond on onClick event', () => {
     const wrapper = shallow(<ComponentXyzClass />)
     const mockFn = jest.fn()
     const ComponentXyzButton = wrapper.find('.ComponentXyz__button')
@@ -80,7 +80,7 @@ describe('ComponentXyzClass', () => {
     expect(mockFn).toHaveBeenCalled()
   });
 
-  it('03. should a function return correct values', () => {
+  it('03. should return the correct values from a function call', () => {
     let output = serviceFunc.utilMaxValue([3,6,9,3,4])
     expect(output).toEqual(9)
     output = serviceFunc.utilMaxValue(['foo', 24, '2 3', 5])
@@ -92,7 +92,7 @@ describe('ComponentXyzClass', () => {
     expect(component).toMatchSnapshot();
   });
 
-  it('01. renders without crashing', () => {
+  it('01. should render without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<ComponentXyzClass />, div);
     ReactDOM.unmountComponentAtNode(div);
