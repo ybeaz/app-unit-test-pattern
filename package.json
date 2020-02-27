@@ -10,7 +10,7 @@
     "react-scripts": "3.2.0"
   },
   "scripts": {
-    "start": "PORT=2000 react-scripts start",
+    "start": "react-scripts start -p 2000",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "jest": "jest --watch",

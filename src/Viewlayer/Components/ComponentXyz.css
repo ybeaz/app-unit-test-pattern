@@ -1,15 +1,15 @@
-.MainScreen {
+.ComponentXyz {
   text-align: center;
   background-color: blanchedalmond;
   flex: 1;
   padding: 1rem;
 }
 
-.MainScreen__logo {
+.ComponentXyz__logo {
   height: 40vmin;
 }
 
-.MainScreen__header {
+.ComponentXyz__header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -20,14 +20,14 @@
   color: white;
 }
 
-.MainScreen__link {
+.ComponentXyz__link {
   color: #09d3ac;
 }
 
-.MainScreen__button_NaN {
+.ComponentXyz__button_NaN {
   cursor: pointer;
 }
 
-.MainScreen__button_NaN {
+.ComponentXyz__button_NaN {
   cursor: not-allowed;
 }

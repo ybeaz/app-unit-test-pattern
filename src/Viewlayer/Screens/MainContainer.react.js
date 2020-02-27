@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Header } from '../Components/Header.react'
-import { MainScreenClass } from './MainScreenClass.react'
+import { ComponentXyzClass } from '../Components/ComponentXyzClass.react'
 import './MainContainer.css'
 
 
@@ -42,7 +42,7 @@ export class MainContainer extends React.Component {
             <Header />
             <div className='MainContainer__body'>
                 <div className='MainContainer__body'>MainContainer.react.js</div>
-                <MainScreenClass />
+                <ComponentXyzClass />
             </div>
         </div>
     }

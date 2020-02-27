@@ -1,10 +1,10 @@
 import React from 'react'
 
 import * as serviceFunc from '../../Shared/serviceFunc'
-import './MainScreen.css'
+import './ComponentXyz.css'
 
 
-export class MainScreenClass extends React.Component {
+export class ComponentXyzClass extends React.Component {
 
     constructor(props) {
         super(props)
@@ -18,7 +18,7 @@ export class MainScreenClass extends React.Component {
 
         switch(action.type){
             case 'onClickButton':
-                const { isPermission } = this.getMainScreenButtonPermission(this.state.inputCurrent)
+                const { isPermission } = this.getComponentXyzButtonPermission(this.state.inputCurrent)
                 if (isPermission === false) return
                 this.setState({
                     inputArr: [...this.state.inputArr, this.state.inputCurrent],
@@ -31,22 +31,22 @@ export class MainScreenClass extends React.Component {
                     inputCurrent: action.value,
                 })
                 return action.value
-                // console.info('MainScreen->handleActions [0]', action.type, { val: action.value })
+                // console.info('ComponentXyz->handleActions [0]', action.type, { val: action.value })
             break
             default: {
-                console.info('MainScreen->handleActions [10] Unexpected action type', action.type)
+                console.info('ComponentXyz->handleActions [10] Unexpected action type', action.type)
             }
         }
     }   
 
-    getMainScreenButtonPermission = inputCurrent => {
+    getComponentXyzButtonPermission = inputCurrent => {
         let output = {
-            className: 'MainScreen__button MainScreen__button_NaN',
+            className: 'ComponentXyz__button ComponentXyz__button_NaN',
             isPermission: false,
         }
         if (!isNaN(inputCurrent)) {
             output = {
-                className: 'MainScreen__button',
+                className: 'ComponentXyz__button',
                 isPermission: true,
             }
         }
@@ -55,21 +55,21 @@ export class MainScreenClass extends React.Component {
 
 
     render () {
-        const mainScreenButtonClass = this.getMainScreenButtonPermission(this.state.inputCurrent).className
+        const ComponentXyzButtonClass = this.getComponentXyzButtonPermission(this.state.inputCurrent).className
 
-        return <div className='MainScreen'>
+        return <div className='ComponentXyz'>
             <div>
                 <p>
-                    MainScreenClass.react.js
+                    ComponentXyzClass.react.js
                 </p>
-                <div className='MainScreen__inputButtonWrap'>
+                <div className='ComponentXyz__inputButtonWrap'>
                     <input
-                        className='MainScreen__input' 
+                        className='ComponentXyz__input' 
                         onChange={e => this.handleEvents({type: 'inputNewVal', value: e.target.value})}
                         value={this.state.inputCurrent}
                     />
                     <button
-                        className={mainScreenButtonClass}
+                        className={ComponentXyzButtonClass}
                         onClick={e => this.handleEvents({type: 'onClickButton'})}
                     >
                         Ok

@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 
 import { Header } from '../Components/Header.react'
 import * as serviceFunc from '../../Shared/serviceFunc'
-import './MainScreen.css'
+import './ComponentXyz.css'
 
 
-export const MainScreen = props => {
+export const ComponentXyz = props => {
 
     const [inputArr, setInputArr] = useState([])
     const [inputCurrent, setInputCurrent] = useState('')
@@ -19,31 +19,31 @@ export const MainScreen = props => {
             break
             case 'inputNewVal':
                 setInputCurrent(action.value)
-                // console.info('MainScreen->handleActions [0]', action.type, { val: action.value })
+                // console.info('ComponentXyz->handleActions [0]', action.type, { val: action.value })
             break
             default: {
-                console.info('MainScreen->handleActions [10] Unexpected action type', action.type)
+                console.info('ComponentXyz->handleActions [10] Unexpected action type', action.type)
             }
         }
     }
 
     const maxValue = serviceFunc.utilMaxValue(inputArr)
-    // console.info('MainScreen', { maxValue, inputArr, inputCurrent })
+    // console.info('ComponentXyz', { maxValue, inputArr, inputCurrent })
 
-    return <div className='MainScreen'>
+    return <div className='ComponentXyz'>
         <Header />
         <div>
             <p>
                 Edit <code>src/App.js</code> and save to reload.
             </p>
-            <div className='MainScreen__inputButtonWrap'>
+            <div className='ComponentXyz__inputButtonWrap'>
                 <input
-                    className='MainScreen__input' 
+                    className='ComponentXyz__input' 
                     onChange={e => handleEvents(e, {type: 'inputNewVal', value: e.target.value})}
                     value={inputCurrent}
                 />
                 <button
-                    className='MainScreen__button'
+                    className='ComponentXyz__button'
                     onClick={e => handleEvents(e, {type: 'onClickButton'})}
                 >
                     Ok
