@@ -1,0 +1,24 @@
+
+.borderBlack {
+  border-style: solid;
+  border-width: 1;
+  border-color: black;
+}
+
+.borderBlue {
+  border-style: solid;
+  border-width: 1;
+  border-color: blue;
+}
+
+.borderGreen {
+  border-style: solid;
+  border-width: 1;
+  border-color: green;
+}
+
+.borderRed {
+  border-style: solid;
+  border-width: 1;
+  border-color: red;
+}

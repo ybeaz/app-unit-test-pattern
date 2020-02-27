@@ -1,0 +1,32 @@
+.Header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  background-color: #5f5f5f;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color:#f1f1f1;
+}
+
+.Header__logoWrap {
+  justify-content: flex-start;
+  flex-direction: row;
+
+}
+
+.Header__logo {
+  height: 10vmin;
+}
+
+.Header__linkWrap {
+  flex-grow: 1;
+  width: min-content;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.Header__link {
+  color: white;
+}

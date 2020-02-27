@@ -1,0 +1,16 @@
+.MainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: burlywood ;
+}
+
+.MainContainer__body {
+  padding: 1rem;
+}
+
+.MainContainer__body {
+  
+}
