@@ -9,14 +9,17 @@
 
 Themese of OOP patters
 Factory - create a type of object depending on certain conditions
+Prototype - clone an fully initilized instance with default values
 Singleton - create one and only one instance of the function, unique one
 Flyweight - create a complex object "with lean resource/memory consumption"
 
 Adaptor - adapts a new function (to exchange the old one) to an old code workflow by providing the same input-output interface
 Bridge - passes one object methods to another object methods and provides unity interfaces
-Decorator - adds to the object/ function other "resposibilities", props or modify them, returning next object
+Decorator - adds to the object/ function other "resposibilities", props or modify them, returning next non-instantiated object
+Visitor - modify or add properties of the instantiated object(function)
 Proxy - utilizes object/props structure to reduce using other recourses caching the unique values
 
+Command - to run commands with standard interface from common object property set, similar in some sense to the Builder pattern 
 Interpreter - to transform object state passing it "through another object"
 Mediator - to apply to the object method of the mediator and leave a footprint of that in the mediator state
 Iterator - to approach to reach all array/object members/props with stated method
