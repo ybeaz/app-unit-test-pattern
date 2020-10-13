@@ -12,11 +12,14 @@ Factory - create a type of object depending on certain conditions
 Prototype - clone an fully initilized instance with default values
 Singleton - create one and only one instance of the function, unique one
 Flyweight - create a complex object "with lean resource/memory consumption"
+Builder - 
+Template - from content point of view this is variation of the Builder theme through .prototype
 
 Adaptor - adapts a new function (to exchange the old one) to an old code workflow by providing the same input-output interface
 Bridge - passes one object methods to another object methods and provides unity interfaces
-Decorator - adds to the object/ function other "resposibilities", props or modify them, returning next non-instantiated object
-Visitor - modify or add properties of the instantiated object(function)
+Decorator - adds or modify to the object/ function other "resposibilities" through this property, props or modify them, returning next non-instantiated object
+Template - adds or modify properties through prototype. The particular case is to add an a chain of command as a function via prototype
+Visitor - adds or modify properties of the instantiated object(function)
 Proxy - utilizes object/props structure to reduce using other recourses caching the unique values
 
 Command - to run commands with standard interface from common object property set, similar in some sense to the Builder pattern 
