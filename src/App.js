@@ -1,10 +1,13 @@
-import React from 'react';
+import React from 'react'
 
-// import { MainScreen } from './Viewlayer/Screens/MainScreen.react'
-import { MainContainer } from './Viewlayer/Screens/MainContainer.react'
+import { MainScreenClass } from './Viewlayer/Screens/MainScreenClass.react'
 
 function App() {
-  return <div><MainContainer /></div>
+  return (
+    <div>
+      <MainScreenClass />
+    </div>
+  )
 }
 
 export default App

@@ -1,0 +1,33 @@
+.ComponentXyzFunc {
+  text-align: center;
+  background-color: blanchedalmond;
+  flex: 1;
+  padding: 1rem;
+}
+
+.ComponentXyzFunc__logo {
+  height: 40vmin;
+}
+
+.ComponentXyzFunc__header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.ComponentXyzFunc__link {
+  color: #09d3ac;
+}
+
+.ComponentXyzFunc__button_NaN {
+  cursor: pointer;
+}
+
+.ComponentXyzFunc__button_NaN {
+  cursor: not-allowed;
+}

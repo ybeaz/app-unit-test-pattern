@@ -1,0 +1,8 @@
+
+.ToDoListClass__ul {
+  display: flex;
+    flex-direction: column;
+    align-content: left;
+    align-items: start;
+}
+

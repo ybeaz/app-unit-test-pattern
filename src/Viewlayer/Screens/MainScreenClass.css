@@ -1,0 +1,18 @@
+.MainScreenClass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: burlywood ;
+}
+
+.MainScreenClass__block {
+  padding: 1rem;
+  margin-bottom: 1em;
+  width: 50em;
+}
+
+.MainScreenClass__row {
+  display: flex
+}

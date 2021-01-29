@@ -1,0 +1,14 @@
+.ButtonFetchListFunc {
+  text-align: center;
+  background-color: blanchedalmond;
+  flex: 1;
+  padding: 1rem;
+}
+
+.ButtonFetchListFunc__ul {
+  display: flex;
+    flex-direction: column;
+    align-content: left;
+    align-items: start;
+}
+

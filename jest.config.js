@@ -7,7 +7,16 @@ const jestConfig = {
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
   },
-  testMatch: ['**/__test__/*.js?(x)'],
+  testMatch: [
+    '**/?(*.)+(spec|test).[jt]s?(x)',
+    '**/__tests__/*.js?(x)',
+    '**/__tests__/*.js?(x)',
+  ],
+  moduleNameMapper: {
+    '\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
+    '\\.(gif|ttf|eot|svg)$': '<rootDir>/__mocks__/fileMock.js',
+  },
+  resolver: null,
 }
 
 module.exports = jestConfig
