@@ -30,10 +30,6 @@ export const ToDoBasicReduxFunc = () => {
     }
   }
 
-  const getList = listArr => {
-    return <li>1</li>
-  }
-
   return (
     <div className='ToDoBasicReduxFunc'>
       <p>ToDoBasicReduxFunc.react.js</p>
