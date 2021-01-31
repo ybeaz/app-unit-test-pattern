@@ -7,9 +7,8 @@
     "start": "open-cli http://127.0.0.1:3420 & webpack-dev-server --config webpack.dev.js --color",
     "dev": "webpack-dev-server --config webpack.dev.js --color",
     "build": "webpack -p --config webpack.prod.js",
-    "jest": "jest",
     "ba": "webpack-bundle-analyzer --port 4200 dist02/stats.json",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "eject": "react-scripts eject",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
     "lint": "eslint --fix src/**/*.{js,jsx,ts,tsx}"
