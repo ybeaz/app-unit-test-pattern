@@ -6,13 +6,12 @@
 
 describe('Algoritms', () => {
   it('-- getNthFibonacciNumber with Recursive func', () => {
-    const getNthFibonacciNumber = (num, times = 2, nthM1 = 0, nth = 1) => {
-      if (times < num) {
-        const nthM1Next = nth
-        const nthNext = nthM1 + nth
-        const timesNext = times + 1
-        // console.info('[16]', { num, timesNext, nthM1Next, nthNext })
-        return getNthFibonacciNumber(num, timesNext, nthM1Next, nthNext)
+    const getNthFibonacciNumber = (num, counter = 2, nthPrev = 0, nth = 1) => {
+      if (counter < num) {
+        const nthTmp = nthPrev + nth
+        nthPrev = nth
+        counter += 1
+        return getNthFibonacciNumber(num, counter, nthPrev, nthTmp)
       }
       return nth
     }
