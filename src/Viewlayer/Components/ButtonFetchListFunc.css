@@ -12,3 +12,10 @@
     align-items: start;
 }
 
+.ButtonFetchListFunc__features_list {
+  display: flex;
+  flex-direction: column;
+  align-content: left;
+  align-items: start;
+  font-size: 0.8em;
+}

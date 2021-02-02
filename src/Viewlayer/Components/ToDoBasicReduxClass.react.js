@@ -37,6 +37,13 @@ class ToDoBasicReduxClassToConnect extends React.Component {
     return (
       <div className='ToDoBasicReduxClass'>
         <p>ToDoBasicReduxClass.react.js</p>
+        <ol className='ToDoBasicReduxClass__features_list'>
+          <li>Redux store, actions, reducer, Provider</li>
+          <li>Connect to Redux store</li>
+          <li>mapStateToProps</li>
+          <li>mapDispatchToProps</li>
+          <li>dispatch > dispatchingEvent</li>
+        </ol>
         <div>
           <input
             onChange={e => this.handleEvent(e, { type: 'INPUT_VALUE' })}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
+import { ButtonFetchListUlFunc } from './ButtonFetchListUlFunc.react'
 import './ButtonFetchListFunc.css'
 
 export const ButtonFetchFunc = () => {
@@ -12,9 +13,8 @@ export const ButtonFetchFunc = () => {
       fetch('./src/__mock__/mockData.json')
         .then(res => res.json())
         .then(data => {
-          setFetchedData(data)
+          setFetchedData(() => data)
           setIsDisplaying(true)
-          console.info('[13]', data)
         })
     }
   }, [isFetching])
@@ -49,13 +49,19 @@ export const ButtonFetchFunc = () => {
   // console.info('[31]', { isFetching, fetchedData, isDisplaying })
   return (
     <div className='ButtonFetchListFunc'>
-      <p>ButtonFetchListFunc.react.js</p>
+      {React.createElement('p', null, 'ButtonFetchListFunc.react.js')}
+      <ol className='ButtonFetchListFunc__features_list'>
+        <li>useState with function</li>
+        <li>useEffect with async fetch()</li>
+        <li>React.createElement(elem, props, ...children)</li>
+        <li>this.props.children</li>
+      </ol>
       <button onClick={e => handleEvent({ type: 'FETCH' })}>Fetch</button>
       <button onClick={e => handleEvent({ type: 'CLEAR' })}>Clear</button>
       <div>
-        <ul className='ButtonFetchListFunc__ul'>
+        <ButtonFetchListUlFunc className='ButtonFetchListFunc__ul'>
           {getList(fetchedData, isDisplaying)}
-        </ul>
+        </ButtonFetchListUlFunc>
       </div>
     </div>
   )

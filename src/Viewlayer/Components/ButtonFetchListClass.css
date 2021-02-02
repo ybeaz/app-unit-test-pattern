@@ -1,11 +1,18 @@
-.ToDoBasicReduxClass {
+.ButtonFetchListClass {
   text-align: center;
   background-color: blanchedalmond;
   flex: 1;
   padding: 1rem;
 }
 
-.ToDoBasicReduxClass__features_list {
+.ButtonFetchListClass__ul {
+  display: flex;
+  flex-direction: column;
+  align-content: left;
+  align-items: start;
+}
+
+.ButtonFetchListClass__features_list {
   display: flex;
   flex-direction: column;
   align-content: left;

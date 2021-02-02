@@ -33,6 +33,11 @@ export const ToDoBasicReduxFunc = () => {
   return (
     <div className='ToDoBasicReduxFunc'>
       <p>ToDoBasicReduxFunc.react.js</p>
+      <ol className='ToDoBasicReduxFunc__features_list'>
+        <li>Redux store, actions, reducer, Provider</li>
+        <li>useState, useEffect</li>
+        <li>useSelector, useDispatch</li>
+      </ol>
       <div>
         <input
           onChange={e => handleEvent(e, { type: 'INPUT_VALUE' })}
