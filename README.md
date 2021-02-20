@@ -7,7 +7,7 @@
  
 > Thanks Thiago and Max for inspiring interest in the topic and suggestions  
 
-# Definition of OOP design patters
+# Definition of OOP design patters 
 Design patterns are advanced object-oriented solutions to commonly occurring software problems.  Patterns are about reusable designs and interactions of objects.
 
 ## Creational Patterns
