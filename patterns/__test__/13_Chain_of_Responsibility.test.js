@@ -1,4 +1,39 @@
 describe('Behavioral Patterns', () => {
+  it('-- Pattern: Chain of Resp II.	A way of passing a request between a chain of objects', () => {
+    const chain = arg => {
+      const obj = {
+        res: arg,
+        add(...args) {
+          this.res += args.reduce((prev, item, i, arr) => {
+            return prev + item
+          })
+          return this
+        },
+        substitute(sub) {
+          this.res = sub
+          return this
+        },
+        exec(f) {
+          this.res = f(this.res)
+          return this
+        },
+        done() {
+          return this.res
+        },
+      }
+
+      return obj
+    }
+
+    expect(
+      chain(5)
+        .add(2, 4)
+        .substitute(7)
+        .exec(x => 3 * x)
+        .done()
+    ).toBe(21)
+  })
+
   it('-- Pattern: Chain of Resp.	A way of passing a request between a chain of objects', () => {
     function Request(amount) {
       this.amount = amount
