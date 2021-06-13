@@ -5,6 +5,29 @@
  */
 
 describe('Algoritms', () => {
+  it('variant from Anna Ches. getNthFibonacciNumber func', () => {
+    const getNthFibonacciNumber = (n, arr = [0, 1]) => {
+      if (arr[n] === undefined) {
+        const cur = arr.length
+        const elem = arr[cur - 2] + arr[cur - 1]
+        arr = [...arr, elem]
+
+        return getNthFibonacciNumber(n, arr)
+      }
+
+      return arr[n]
+    }
+
+    let output = new Array(11)
+      .fill(true)
+      .map((item, index) => index)
+      .map(item => getNthFibonacciNumber(item))
+
+    // console.info('[]', { output })
+    const expected = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+    expect(output).toEqual(expected)
+  })
+
   it('-- getNthFibonacciNumber with Recursive func', () => {
     const getNthFibonacciNumber = (num, counter = 2, nthPrev = 0, nth = 1) => {
       if (counter < num) {
