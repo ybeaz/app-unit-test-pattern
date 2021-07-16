@@ -1,4 +1,60 @@
 describe('Structural Patterns', () => {
+  it('-- Pattern: Decorator/ HOF  Modify the output adding a function dynamicly', () => {
+    const arrTest = [
+      {
+        input: [2, 3],
+        key: 'sum',
+        expected: 'result of sum(2, 3) = 5, tested successfully',
+      },
+      {
+        input: [6, 4],
+        key: 'sub',
+        expected: 'result of sub(6, 4) = 2, tested successfully',
+      },
+      {
+        input: [5, 4],
+        key: 'mult',
+        expected: 'result of mult(5, 4) = 20, tested successfully',
+      },
+      {
+        input: [15, 3],
+        key: 'div',
+        expected: 'result of div(15, 3) = 5, tested successfully',
+      },
+    ]
+    const sum = (a, b) => a + b
+    const sub = (a, b) => a - b
+    const mult = (a, b) => a * b
+    const div = (a, b) => a / b
+
+    const funcWithReport = (func, args) => {
+      const [a, b] = args
+      const startReport = `result of ${
+        func.name
+      }(${a.toString()}, ${b.toString()}) = `
+
+      const res = func(...args)
+
+      const finishReport = ', tested successfully'
+      return startReport + res.toString() + finishReport
+    }
+
+    const reportTest = {
+      sum: (...args) => funcWithReport(sum, args),
+      sub: (...args) => funcWithReport(sub, args),
+      mult: (...args) => funcWithReport(mult, args),
+      div: (...args) => funcWithReport(div, args),
+    }
+
+    const res = arrTest.map(item => {
+      const { input, key, expected } = item
+      return reportTest[key](...input)
+    })
+
+    const expected = arrTest.map(item => item.expected)
+    expect(res).toEqual(expected)
+  })
+
   it('-- Pattern: Decorator  Add responsibilities to objects dynamically', () => {
     const User = function (name) {
       this.userName = `Name: ${name}`
