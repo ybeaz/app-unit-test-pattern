@@ -1,4 +1,56 @@
 describe('Structural Patterns', () => {
+  it('-- Pattern: Decorator   with @ notation', () => {
+    function log2(name) {
+      return function decorator(t, n, descriptor) {
+        const original = descriptor.value
+        if (typeof original === 'function') {
+          descriptor.value = function (...args) {
+            console.log(`Arguments for ${name}: ${args}`)
+            try {
+              const result = original.apply(this, args)
+              console.log(`Result from ${name}: ${result}`)
+              return result
+            } catch (e) {
+              console.log(`Error from ${name}: ${e}`)
+              throw e
+            }
+          }
+        }
+        return descriptor
+      }
+    }
+
+    function log(target, name, descriptor) {
+      console.info('09_Decorator.test [24]', { target, name, descriptor })
+      const original = descriptor.value
+      if (typeof original === 'function') {
+        descriptor.value = function (...args) {
+          console.log(`Arguments: ${args}`)
+          try {
+            const result = original.apply(this, args)
+            console.log(`Result: ${result}`)
+            return result
+          } catch (e) {
+            console.log(`Error: ${e}`)
+            throw e
+          }
+        }
+      }
+      return descriptor
+    }
+
+    class Example {
+      @log
+      sum(a, b) {
+        return a + b
+      }
+    }
+
+    const e = new Example()
+
+    console.info('09_Decorator.test [33]', { sum: e.sum(1, 2) })
+  })
+
   it('-- Pattern: Decorator/ HOF  Modify the output adding a function dynamicly', () => {
     const arrTest = [
       {
