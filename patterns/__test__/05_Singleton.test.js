@@ -10,32 +10,69 @@
 // getInstance
 
 describe('Creational Patterns', () => {
-
-  it('--  2021-12-25 Pattern: Singleton.	A class of which only a single instance can exist', () => {
- 
-    const Sum = function(x){
-      return {
-        sumX(y){
-          return x + y
-        }
+  it('--  2021-12-25-2 Pattern: Singleton.	A class of which only a single instance can exist', () => {
+    class CalcClass {
+      mult(x, y) {
+        return x * y
       }
     }
 
+    const classCollection = {
+      CalcClass,
+    }
 
-    const Singleton = function(Func, x2) {
+    const Singleton = function () {
+      let instance = Object.keys(classCollection).reduce(
+        (reducer, item, i) => ({ ...reducer, [item]: undefined }),
+        {}
+      )
 
+      return {
+        getInstance(className) {
+          return (
+            instance[className]
+              ? instance[className]
+              : (instance[className] = new classCollection[className]()),
+            instance[className]
+          )
+        },
+      }
+    }
+
+    const a = new classCollection['CalcClass']()
+    const b = new classCollection['CalcClass']()
+    const s = Singleton()
+    const c = s.getInstance('CalcClass')
+    const d = s.getInstance('CalcClass')
+
+    console.info('05_Singleton.test [47]', { c, d })
+
+    expect(a === b).toBe(false)
+    expect(c === d).toBe(true)
+  })
+
+  it('--  2021-12-25 Pattern: Singleton.	A class of which only a single instance can exist', () => {
+    const Sum = function (x) {
+      return {
+        sumX(y) {
+          return x + y
+        },
+      }
+    }
+
+    const Singleton = function (Func, x2) {
       let instance
 
-      const createInstance = function(){
+      const createInstance = function () {
         instance = Func(x2)
         return instance
       }
 
       return {
-        getInstance(){
-          if(!instance) instance = createInstance()
+        getInstance() {
+          if (!instance) instance = createInstance()
           return instance
-        }
+        },
       }
     }
 
@@ -48,7 +85,6 @@ describe('Creational Patterns', () => {
     expect(a === b).toBe(false)
     expect(c === d).toBe(true)
   })
-
 
   it('--  2021-02-01 Pattern: Singleton.	A class of which only a single instance can exist', () => {
     class MyClass {

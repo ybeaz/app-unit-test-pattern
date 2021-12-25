@@ -14,39 +14,37 @@
 // Background
 // check
 
-
 describe('Structural Patterns', () => {
   it('-- 2021-12-24 Pattern: Facade  A single class that represents an entire subsystem', () => {
-
-    const Bank = function() {
-      this.verify = function(ammount2) {
+    const Bank = function () {
+      this.verify = function (ammount2) {
         let approved = true
-        if(ammount2 > 100000) approved = false
-        return approved
-      }
-    }  
-
-    const Credit = function() {
-      this.get = function(ammount2) {
-        let approved = true
-        if(ammount2 > 10000) approved = false
+        if (ammount2 > 100000) approved = false
         return approved
       }
     }
 
-    const Background = function() {
-      this.check = function(name2) {
+    const Credit = function () {
+      this.get = function (ammount2) {
+        let approved = true
+        if (ammount2 > 10000) approved = false
+        return approved
+      }
+    }
+
+    const Background = function () {
+      this.check = function (name2) {
         let approved = true
         if (name2 === 'Asama Ben Laden') approved = false
         return approved
       }
     }
 
-    const Mortgage = function(name) {
+    const Mortgage = function (name) {
       this.name = name
     }
 
-    Mortgage.prototype.applyFor = function(amount) {
+    Mortgage.prototype.applyFor = function (amount) {
       let result = 'approved'
 
       if (!new Bank().verify(amount)) result = 'denied'
