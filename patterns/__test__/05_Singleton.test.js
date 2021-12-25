@@ -1,5 +1,91 @@
+/**
+ * @description The Singleton Pattern limits the number of instances of a particular object to just one.
+ * @link https://www.dofactory.com/javascript/design-patterns/singleton
+ * @test yarn jest patterns/__test__/05_Singleton.test.js
+ */
+
+// Singleton
+// instance
+// createInstance
+// getInstance
+
 describe('Creational Patterns', () => {
-  it('--  Pattern: Singleton	A class of which only a single instance can exist', () => {
+
+  it('--  2021-12-25 Pattern: Singleton.	A class of which only a single instance can exist', () => {
+ 
+    const Sum = function(x){
+      return {
+        sumX(y){
+          return x + y
+        }
+      }
+    }
+
+
+    const Singleton = function(Func, x2) {
+
+      let instance
+
+      const createInstance = function(){
+        instance = Func(x2)
+        return instance
+      }
+
+      return {
+        getInstance(){
+          if(!instance) instance = createInstance()
+          return instance
+        }
+      }
+    }
+
+    const a = Sum(2)
+    const b = Sum(2)
+    const s = Singleton(Sum, 2)
+    const c = s.getInstance()
+    const d = s.getInstance()
+
+    expect(a === b).toBe(false)
+    expect(c === d).toBe(true)
+  })
+
+
+  it('--  2021-02-01 Pattern: Singleton.	A class of which only a single instance can exist', () => {
+    class MyClass {
+      obj() {
+        return {}
+      }
+    }
+
+    const classesMap = {
+      MyClass,
+    }
+
+    // eslint-disable-next-line func-names
+    const Singleton = function () {
+      this.instance = undefined
+    }
+
+    // eslint-disable-next-line func-names
+    Singleton.prototype.getInstance = function (className) {
+      if (!this.instance) {
+        this.instance = new classesMap[className]()
+      }
+      return this.instance
+    }
+
+    const a = new MyClass()
+    const b = new MyClass()
+    const SingletonInst = new Singleton()
+    const c = SingletonInst.getInstance('MyClass')
+    const d = SingletonInst.getInstance('MyClass')
+    // console.info('Singleton', { a: a.obj(), 'a === b': a === b, c: c.obj(), 'c === d': c === d })
+
+    expect(a === b).toBe(false)
+    expect(c === d).toBe(true)
+  })
+
+  it('--  2020-11-01 Pattern: Singleton.	A class of which only a single instance can exist', () => {
     function Calculation() {
       return (x, y) => ({ sum: x + y, mult: x * y, div: x / y })
     }
@@ -26,44 +112,4 @@ describe('Creational Patterns', () => {
     expect(calc(7, 2).mult).toBe(14)
     expect(calc(9, 4).div).toBe(2.25)
   })
-
-  it('--  Pattern: Singleton II.	A class of which only a single instance can exist', () => {
-    class MyClass {
-      obj() {
-        return {}
-      }
-    }
-
-    const classesMap = {
-      MyClass,
-    }
-
-    // eslint-disable-next-line func-names
-    const Singleton = function () {
-      this.instance = {}
-    }
-
-    // eslint-disable-next-line func-names
-    Singleton.prototype.getInstance = function (className) {
-      if (!this.instance) {
-        this.instance = new classesMap[className]()
-      }
-      return this.instance
-    }
-
-    const a = new MyClass()
-    const b = new MyClass()
-    const SingletonInst = new Singleton('MyClass')
-    const c = SingletonInst.getInstance()
-    const d = SingletonInst.getInstance()
-    // console.info('Singleton', { a: a.obj(), 'a === b': a === b, c: c.obj(), 'c === d': c === d })
-
-    expect(a === b).toBe(false)
-    expect(c === d).toBe(true)
-  })
 })
-
-// Singleton
-// instance
-// createInstance
-// getInstance
