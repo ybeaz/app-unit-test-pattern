@@ -1,17 +1,79 @@
+/**
+ * @description The Decorator pattern extends (decorates) an object’s behavior dynamically.
+ * @link https://www.dofactory.com/javascript/design-patterns/decorator
+ * @test yarn jest patterns/__test__/09_Decorator.test.js
+ */
+
+// User
+// name
+// say
+
+// DecoratedUser
+// user, street, city
+// user
+// name
+// street
+// city
+// say
+
 describe('Structural Patterns', () => {
-  it('-- Pattern: Decorator   with @ notation', () => {
+  it('-- 2020-11-01 Pattern: Decorator  Add responsibilities to objects dynamically', () => {
+    const User = function (name) {
+      this.userName = `Name: ${name}`
+      this.index = function () {
+        return '94111'
+      }
+      this.outcome = function () {
+        return this.name
+      }
+    }
+
+    const decorator = function (User2) {
+      return function (name, address) {
+        const user = new User2(name)
+
+        Object.keys(user).forEach(key => (this[key] = user[key]))
+
+        this.outcome = () => `${this.userName}, ${this.address()}`
+
+        this.address = () => `Address: ${address}, Index: ${this.index()}`
+      }
+    }
+
+    const UserDecorated = decorator(User)
+    const userDecorated = new UserDecorated(
+      'Mikhail',
+      '10 Market st., San Bruno'
+    )
+
+    let expected = 'Name: Mikhail'
+    expect(userDecorated.userName).toBe(expected)
+
+    expected = '94111'
+    expect(userDecorated.index()).toBe(expected)
+
+    expected = 'Name: Mikhail, Address: 10 Market st., San Bruno, Index: 94111'
+    expect(userDecorated.outcome()).toBe(expected)
+
+    expected = 'Address: 10 Market st., San Bruno, Index: 94111'
+    expect(userDecorated.address()).toBe(expected)
+  })
+
+  it('-- 2021-07-20 Pattern: Decorator   with @ notation', () => {
     function log2(name) {
       return function decorator(t, n, descriptor) {
         const original = descriptor.value
         if (typeof original === 'function') {
           descriptor.value = function (...args) {
-            console.log(`Arguments for ${name}: ${args}`)
+            // console.log(`09_Decorator.test [26] Arguments for ${name}: ${args}`)
             try {
               const result = original.apply(this, args)
-              console.log(`Result from ${name}: ${result}`)
+              // console.log(
+              //   `09_Decorator.test [29] Result from ${name}: ${result}`
+              // )
               return result
             } catch (e) {
-              console.log(`Error from ${name}: ${e}`)
+              console.log(`09_Decorator.test [34] Error from ${name}: ${e}`)
               throw e
             }
           }
@@ -21,17 +83,17 @@ describe('Structural Patterns', () => {
     }
 
     function log(target, name, descriptor) {
-      console.info('09_Decorator.test [24]', { target, name, descriptor })
+      // console.info('09_Decorator.test [44]', { target, name, descriptor })
       const original = descriptor.value
       if (typeof original === 'function') {
         descriptor.value = function (...args) {
-          console.log(`Arguments: ${args}`)
+          // console.log(`09_Decorator.test [48] Arguments: ${args}`)
           try {
             const result = original.apply(this, args)
-            console.log(`Result: ${result}`)
+            // console.log(`09_Decorator.test [51] Result: ${result}`)
             return result
           } catch (e) {
-            console.log(`Error: ${e}`)
+            // console.log(`09_Decorator.test [54] Error: ${e}`)
             throw e
           }
         }
@@ -48,10 +110,10 @@ describe('Structural Patterns', () => {
 
     const e = new Example()
 
-    console.info('09_Decorator.test [33]', { sum: e.sum(1, 2) })
+    // console.info('09_Decorator.test [33]', { sum: e.sum(1, 2) })
   })
 
-  it('-- Pattern: Decorator/ HOF  Modify the output adding a function dynamicly', () => {
+  it('-- 2021-07-10 Pattern: Decorator/ HOF  Modify the output adding a function dynamicly', () => {
     const arrTest = [
       {
         input: [2, 3],
@@ -107,7 +169,7 @@ describe('Structural Patterns', () => {
     expect(res).toEqual(expected)
   })
 
-  it('-- Pattern: Decorator  Add responsibilities to objects dynamically', () => {
+  it('-- 2020-11-01 Pattern: Decorator  Add responsibilities to objects dynamically', () => {
     const User = function (name) {
       this.userName = `Name: ${name}`
       this.index = function () {
@@ -158,15 +220,3 @@ describe('Structural Patterns', () => {
     expect(userDecorated.address()).toBe(expected)
   })
 })
-
-// User
-// name
-// say
-
-// DecoratedUser
-// user, street, city
-// user
-// name
-// street
-// city
-// say
