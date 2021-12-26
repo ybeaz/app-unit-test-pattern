@@ -40,6 +40,9 @@ describe('Behavioral Patterns', () => {
     }
 
     const store = new CreateStore({ light: 'red' })
+
+    store.dispatch({ light: 'yellow' })
+
     store.dispatch({ light: 'green' })
 
     // console.info('state 2', {
