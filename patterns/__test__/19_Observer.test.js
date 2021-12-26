@@ -1,5 +1,76 @@
+/**
+ * @description The Observer pattern offers a subscription model in which objects subscribe to an event and get notified when the event occurs. This pattern is the cornerstone of event driven programming, including JavaScript.
+ * @link https://www.dofactory.com/javascript/design-patterns/observer
+ * @test yarn jest patterns/__test__/19_Observer.test.js
+ */
+
+// Click
+// handlers
+
+// Click
+// subscribe
+// fn
+// unsubscribe
+// handlers
+
+// fire
+// o, thisObj
+// scope
+// handlers
+
 describe('Behavioral Patterns', () => {
-  it('--  Pattern: Observer  A way of notifying change to a number of classes', () => {
+  it('--  2020-12-26 Pattern: Observer  A way of notifying change to a number of classes', () => {
+    class Click {
+      handlers = []
+
+      subscribe(func) {
+        this.handlers = [...this.handlers, func]
+      }
+      unsubscribe(func) {
+        this.handlers = this.handlers.filter(item => item !== func)
+      }
+
+      fire(num, thisObj) {
+        const self = thisObj || window
+        this.handlers.forEach(item => {
+          item.call(self, num)
+        })
+      }
+    }
+
+    const EventLog = function () {
+      this.log = []
+
+      this.setLog = num => {
+        this.log = [...this.log, num]
+      }
+
+      this.getLog = () => this.log
+    }
+
+    const eventLog = new EventLog()
+    const fn = eventLog.setLog
+
+    const click = new Click()
+
+    click.subscribe(fn)
+    click.fire(1)
+    click.fire(2)
+    click.unsubscribe(fn)
+    click.fire(3)
+    click.fire(4)
+    click.subscribe(fn)
+    click.fire(5)
+    click.fire(6)
+
+    const log = eventLog.getLog()
+    // console.info('eventLog', { eventLog })
+
+    const expected = [1, 2, 5, 6]
+    expect(log).toEqual(expected)
+  })
+
+  it('--  2020-11-01 Pattern: Observer  A way of notifying change to a number of classes', () => {
     function Click() {
       this.handlers = []
     }
@@ -11,10 +82,10 @@ describe('Behavioral Patterns', () => {
       unsubscribe(fn) {
         this.handlers = this.handlers.filter(item => item !== fn)
       },
-      fire(o, thisObj) {
+      fire(num, thisObj) {
         const self = thisObj || window
         this.handlers.forEach(item => {
-          item.call(self, o)
+          item.call(self, num)
         })
       },
     }
@@ -42,17 +113,3 @@ describe('Behavioral Patterns', () => {
     expect(eventLog).toEqual(expected)
   })
 })
-
-// Click
-// handlers
-
-// Click
-// subscribe
-// fn
-// unsubscribe
-// handlers
-
-// fire
-// o, thisObj
-// scope
-// handlers
