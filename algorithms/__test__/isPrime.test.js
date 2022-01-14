@@ -5,7 +5,7 @@
  */
 
 describe('Algoritms', () => {
-  it('-- isPrime', () => {
+  it('-- isPrime 2022-02-14 16:40', () => {
     const isPrime = val => {
       if (val < 1) return false
       if (val === 1) return true
@@ -14,15 +14,6 @@ describe('Algoritms', () => {
       let iter = val - 1
       while (iter !== 1) {
         output2 = (val / iter) % Math.floor(val / iter) !== 0
-        // console.info('isPrime.test [14]', {
-        //   iter,
-        //   'val / iter': val / iter,
-        //   'Math.floor(val / iter)': Math.floor(val / iter),
-        //   '(val / iter) % Math.floor(val / iter)':
-        //     (val / iter) % Math.floor(val / iter),
-        //   output,
-        //   val,
-        // })
         if (output2 === false) break
         iter -= 1
       }
@@ -34,8 +25,6 @@ describe('Algoritms', () => {
       -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
       20,
     ]
-
-    // -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
 
     const expected = [
       { item: -1, isPrimeTF: false },

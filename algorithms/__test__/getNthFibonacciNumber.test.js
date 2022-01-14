@@ -5,7 +5,34 @@
  */
 
 describe('Algoritms', () => {
-  it('variant from Anna Ches. getNthFibonacciNumber func', () => {
+  it('-- getNthFibonacciNumber.test 2022-02-14 16:40', () => {
+    const getNthFibonacciNumber = (num, cur = 1, fibM1 = 1, fibM2 = 0) => {
+      if (num === 0 || num === 1) return num
+
+      if (cur < num) {
+        cur += 1
+        const fibM2Prev = fibM2
+        fibM2 = fibM1
+        fibM1 = fibM1 + fibM2Prev
+        return getNthFibonacciNumber(num, cur, fibM1, fibM2)
+      }
+
+      return fibM1
+    }
+
+    const expected = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144]
+    let input = [...Array(13).keys()]
+
+    let output = input.map(item => ({
+      item,
+      expected: expected[item],
+      outputed: getNthFibonacciNumber(item),
+    }))
+
+    output.forEach(item => expect(item.outputed).toEqual(item.expected))
+  })
+
+  it('-- getNthFibonacciNumber from Anna Ches. getNthFibonacciNumber func', () => {
     const getNthFibonacciNumber = (n, arr = [0, 1]) => {
       if (arr[n] === undefined) {
         const cur = arr.length
