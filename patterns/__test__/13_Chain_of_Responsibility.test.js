@@ -1,11 +1,58 @@
 /**
  * @Description ...
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 13_Chain_of_Responsibility.test`
  */
 
 describe('Behavioral Patterns', () => {
-  it('-- Pattern: Chain of Resp II.	A way of passing a request between a chain of objects', () => {
+  it('-- Pattern: Chain of Resp III.	A way of passing a request between a chain of objects 2022-01-19', () => {
+    const calculator = (initValue = 0) => {
+      let res2 = initValue
+
+      const output2 = {
+        add(y) {
+          res2 = res2 + y
+          return output2
+        },
+        substitute(y) {
+          res2 = res2 - y
+          return output2
+        },
+        multiply(y) {
+          res2 = res2 * y
+          return output2
+        },
+        divide(y) {
+          res2 = res2 / y
+          return output2
+        },
+        exec(func) {
+          res2 = func(res2)
+          return output2
+        },
+        done() {
+          return res2
+        },
+      }
+
+      return output2
+    }
+
+    const outputed = calculator(5)
+      .add(9)
+      .substitute(7)
+      .multiply(4)
+      .divide(2)
+      .exec(x => 3 * x)
+      .done()
+
+    const expected = 42
+
+    // console.info('13_Chain_of_Responsibility.test [38]', { output })
+    expect(outputed).toBe(expected)
+  })
+
+  it('-- Pattern: Chain of Resp II.	A way of passing a request between a chain of objects 2021-06-01', () => {
     const chain = arg => {
       const obj = {
         res: arg,
