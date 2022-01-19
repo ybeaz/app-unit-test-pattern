@@ -1,7 +1,6 @@
 /**
- * @Description Exploring and replicating Programming Design Patterns
- * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `jest /Users/rcheski/dev/191203_app_create_text/__test__/patterns.test.js`
+ * @Description Exploring algorithms
+ * @command to run `yarn jest fileName.test`
  */
 
 describe('Algoritms', () => {
@@ -30,9 +29,8 @@ describe('Algoritms', () => {
     const letterTemplateObj = new letterTemplate()
     const letterTemplate1 = letterTemplateObj.HappyBirthdayToYou(name)
     const letterTemplate2 = letterTemplateObj.HappyNewYear(name)
-    const letterTemplate3 = letterTemplateObj.MyCongratulationsWithMarriage(
-      name
-    )
+    const letterTemplate3 =
+      letterTemplateObj.MyCongratulationsWithMarriage(name)
 
     console.info('[35]', {
       letterTemplate1,
