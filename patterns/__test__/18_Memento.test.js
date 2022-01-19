@@ -1,3 +1,9 @@
+/**
+ * @Description ...
+ * @link https://www.dofactory.com/javascript/design-patterns
+ * @command to run `yarn jest fileName.test`
+ */
+
 describe('Behavioral Patterns', () => {
   it("--  Pattern: Memento Capture and restore an object's internal state", () => {
     function Person(name, street, city, state) {

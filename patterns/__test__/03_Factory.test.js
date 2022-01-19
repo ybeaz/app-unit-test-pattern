@@ -1,3 +1,9 @@
+/**
+ * @Description ...
+ * @link https://www.dofactory.com/javascript/design-patterns
+ * @command to run `yarn jest fileName.test`
+ */
+
 describe('Creational Patterns', () => {
   it('--  Pattern: Factory Method	Creates an instance of several derived classes', () => {
     function FullTime() {

@@ -1,3 +1,9 @@
+/**
+ * @Description ...
+ * @link https://www.dofactory.com/javascript/design-patterns
+ * @command to run `yarn jest fileName.test`
+ */
+
 describe('Behavioral Patterns', () => {
   it('--  Pattern: Strategy  Encapsulates an algorithm inside a class', () => {
     function Shipping() {

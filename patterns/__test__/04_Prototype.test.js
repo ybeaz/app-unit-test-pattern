@@ -1,3 +1,9 @@
+/**
+ * @Description ...
+ * @link https://www.dofactory.com/javascript/design-patterns
+ * @command to run `yarn jest fileName.test`
+ */
+
 describe('Creational Patterns', () => {
   it('--  Pattern: Prototype	A fully initialized instance to be copied or cloned', () => {
     function Customer(first, last, status = 'n/a') {

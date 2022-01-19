@@ -1,3 +1,9 @@
+/**
+ * @Description ...
+ * @link https://www.dofactory.com/javascript/design-patterns
+ * @command to run `yarn jest fileName.test`
+ */
+
 describe('Structural Patterns', () => {
   it('-- Pattern: Adapter	Match interfaces of different classes', () => {
     function Shipping() {

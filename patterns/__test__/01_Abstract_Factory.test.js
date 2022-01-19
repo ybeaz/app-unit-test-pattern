@@ -1,3 +1,9 @@
+/**
+ * @Description ...
+ * @link https://www.dofactory.com/javascript/design-patterns
+ * @command to run `yarn jest fileName.test`
+ */
+
 describe('Creational Patterns', () => {
   it('--  Pattern: Abstract Factory  Creates an instance of several families of classes', () => {
     function Employee(name) {

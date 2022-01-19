@@ -1,3 +1,9 @@
+/**
+ * @Description ...
+ * @link https://www.dofactory.com/javascript/design-patterns
+ * @command to run `yarn jest fileName.test`
+ */
+
 describe('Behavioral Patterns', () => {
   it('-- Pattern: Chain of Resp II.	A way of passing a request between a chain of objects', () => {
     const chain = arg => {

@@ -4,21 +4,59 @@
  * @test yarn jest patterns/__test__/20_State.test.js
  */
 
-// TrafficLight
-// CreateStore
-// count
-// currentState
-// change
-// start
-
-// Red
-// Yellow
-// Green
-// light
-// go
-
 describe('Behavioral Patterns', () => {
-  it("--  2020=12-26 Pattern: State  Alter an object's behavior when its state changes", () => {
+  it('-- Pattern: State with getters, setters, fungs example, as I rememeber it, 2022-01-19', () => {
+    const GetterSetterFung = function () {
+      let fungs = { isFungs: false, numberFungs: 0 }
+
+      this.getStatus = function () {
+        return fungs
+      }
+
+      this.setStatus = function (numberFungs) {
+        fungs = { isFungs: true, numberFungs }
+        if (typeof numberFungs !== 'number' || numberFungs <= 0) {
+          fungs = { isFungs: false, numberFungs: 0 }
+        }
+        return fungs
+      }
+    }
+
+    const input = [0, 10, 12, 0]
+
+    const getterSetterFungInstance = new GetterSetterFung()
+
+    const output = input.map(item => {
+      getterSetterFungInstance.setStatus(item)
+      return getterSetterFungInstance.getStatus()
+    })
+
+    const expected = [
+      { isFungs: false, numberFungs: 0 },
+      { isFungs: true, numberFungs: 10 },
+      { isFungs: true, numberFungs: 12 },
+      { isFungs: false, numberFungs: 0 },
+    ]
+
+    // console.info('24_GetterSetter.test [41]', { output })
+
+    expect(output).toEqual(expected)
+  })
+
+  // TrafficLight
+  // CreateStore
+  // count
+  // currentState
+  // change
+  // start
+
+  // Red
+  // Yellow
+  // Green
+  // light
+  // go
+
+  it("-- Pattern: State  Alter an object's behavior when its state changes, 2021-12-26", () => {
     class CreateStore {
       constructor(props) {
         this.state = [props]
