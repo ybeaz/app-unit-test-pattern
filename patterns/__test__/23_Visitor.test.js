@@ -1,3 +1,9 @@
+/**
+ * @Description ...
+ * @link https://www.dofactory.com/javascript/design-patterns
+ * @command to run `yarn jest fileName.test`
+ */
+
 describe('Behavioral Patterns', () => {
   it('--  Pattern: Visitor  Defines a new operation to a class without change', () => {
     var Employee = function (name, salary, vacation) {

@@ -1,5 +1,11 @@
 import { testLogger } from '../../src/Shared/testLogger' // './testLogger'
 
+/**
+ * @Description ...
+ * @link https://www.dofactory.com/javascript/design-patterns
+ * @command to run `yarn jest fileName.test`
+ */
+
 describe('Behavioral Patterns', () => {
   it('--  Pattern: Mediator  Defines simplified communication between classes', () => {
     const log = testLogger('arr')

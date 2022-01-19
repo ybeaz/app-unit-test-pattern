@@ -1,3 +1,9 @@
+/**
+ * @Description ...
+ * @link https://www.dofactory.com/javascript/design-patterns
+ * @command to run `yarn jest fileName.test`
+ */
+
 describe('Creational Patterns', () => {
   it('--  Pattern: Builder  Separates object construction from its representation', () => {
     function Car() {

@@ -1,3 +1,9 @@
+/**
+ * @Description ...
+ * @link https://www.dofactory.com/javascript/design-patterns
+ * @command to run `yarn jest fileName.test`
+ */
+
 describe('Structural Patterns', () => {
   it('-- Pattern: Flyweight  A fine-grained instance used for efficient sharing', () => {
     var FlyWeightFactory = (function () {
