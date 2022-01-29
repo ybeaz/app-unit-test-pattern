@@ -32,7 +32,7 @@ describe('Algoritms', () => {
 
           const romLen = rom.length
 
-          const romSliced = temp.slice().slice(0, romLen)
+          const romSliced = temp.slice(0, romLen)
 
           if (romSliced === rom) {
             res += arab
