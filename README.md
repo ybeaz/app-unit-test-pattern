@@ -1,16 +1,19 @@
 # Unit testing with Jest and Enzyme
-  - Link JavaScript Design Patterns https://www.dofactory.com/javascript/design-patterns
-  - Link to the repo `https://github.com/ybeaz/app-unit-test-pattern`
-  - Main test example `src\Viewlayer\Components\ComponentXyzClass.test.js`
-  - To run example `jest ComponentXyzClass.test.js`
-  - To send questions and suggestions `t3531350@yahoo.com`
- 
-> Thanks Thiago and Max for inspiring interest in the topic and suggestions  
 
-# Definition of OOP design patters 
-Design patterns are advanced object-oriented solutions to commonly occurring software problems.  Patterns are about reusable designs and interactions of objects.
+- Link JavaScript Design Patterns https://www.dofactory.com/javascript/design-patterns
+- Link to the repo `https://github.com/ybeaz/app-unit-test-pattern`
+- Main test example `src\Viewlayer\Components\ComponentXyzClass.test.js`
+- To run example `jest ComponentXyzClass.test.js`
+- To send questions and suggestions `t3531350@yahoo.com`
+
+> Thanks Thiago and Max for inspiring interest in the topic and suggestions
+
+# Definition of OOP design patters
+
+Design patterns are advanced object-oriented solutions to commonly occurring software problems. Patterns are about reusable designs and interactions of objects.
 
 ## Creational Patterns
+
 Abstract Factory - create an object through another function
 Factory - create a type of object depending on certain conditions
 Prototype - clone an fully initilized instance with default values
@@ -21,6 +24,7 @@ Builder - (another version), create an object [one function], create actions wit
 Template - from content point of view this is variation of the Builder theme through .prototype
 
 ## Structural Patterns
+
 Adaptor - adapts a new function (to exchange the old one) to an old code workflow by providing the same input-output interface
 Bridge - passes one object methods to another object methods and provides unity interfaces
 Decorator - adds or modify to the object/ function other "resposibilities" through this property, props or modify them, returning next non-instantiated object
@@ -30,7 +34,8 @@ Visitor - adds or modify properties of the instantiated object(function)
 Proxy - utilizes object/props structure to reduce using other recourses caching the unique values
 
 ## Behavioral Patterns
-Command - to run commands with standard interface from common object property set, similar in some sense to the Builder pattern 
+
+Command - to run commands with standard interface from common object property set, similar in some sense to the Builder pattern
 Interpreter - to transform object state passing it "through another object"
 Mediator - to apply to the object method of the mediator and leave a footprint of that in the mediator state
 Iterator - to approach to reach all array/object members/props with stated method
@@ -40,7 +45,10 @@ Observer - to perform (fire) actions (run function for example) on an objects (a
 State - to store, change and return an object, that reflects state of the app. Optionally, to keep state history
 Chain of responsibility - to create a method that can get (extract) a sense from data in a chain, like doing math, or processing consequently
 
-
-
-
 [Markdown editor](https://dillinger.io/)
+
+## How to section
+
+### How to run tests, algorithms and patterns
+
+`yarn jest romanToInteger.test`
