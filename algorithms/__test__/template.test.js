@@ -9,10 +9,10 @@ describe('Algoritms', () => {
       return true
     }
 
-    let output = func()
-    console.info('[]', { output })
-    output = true
+    let outputed = func()
+    console.info('[]', { outputed })
+    outputed = true
     const expected = true
-    expect(output).toEqual(expected)
+    expect(outputed).toEqual(expected)
   })
 })
