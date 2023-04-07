@@ -16,15 +16,92 @@
 // city
 // say
 
-describe('Structural Patterns', () => {
+describe('Structural Patterns, Decorator', () => {
+  it('-- 2023-04-07-2 Pattern: Decorator for arrow function. Add responsibilities to objects dynamically', () => {
+    const sum = (a, b) => {
+      return a + b
+    }
+
+    const decorator = Func => {
+      return function (var1, var2, var3) {
+        return Func(var1, var2) + var3
+      }
+    }
+
+    const funcDecorated = decorator(sum)
+
+    let outputed = sum(1, 2)
+    let expected = 3
+    expect(outputed).toBe(expected)
+
+    outputed = funcDecorated(1, 2, 4)
+    expected = 7
+    expect(outputed).toBe(expected)
+  })
+
+  it('-- 2023-04-07 Pattern: Decorator  Add responsibilities to objects dynamically', () => {
+    const User = function (userName) {
+      this.userName = `Name: ${userName}`
+      this.index = function () {
+        return '94111'
+      }
+      this.outcome = () => {
+        return this.userName
+      }
+    }
+
+    const decorator = function (Func) {
+      return function (userName, address) {
+        const funcInstance = new Func(userName, address)
+        Object.keys(funcInstance).forEach(
+          prop => (this[prop] = funcInstance[prop])
+        )
+
+        this.address = () => {
+          return `Address: ${address}, Index: ${this.index()}`
+        }
+
+        this.outcome = () => {
+          return `${this.userName}, ${this.address()}`
+        }
+      }
+    }
+
+    const user = new User('Mikhail')
+
+    const UserDecorated = decorator(User)
+    const userDecorated = new UserDecorated(
+      'Mikhail',
+      '10 Market st., San Bruno'
+    )
+
+    let expected = 'Name: Mikhail'
+    expect(user.userName).toBe(expected)
+    expect(userDecorated.userName).toBe(expected)
+
+    expected = '94111'
+    expect(user.index()).toBe(expected)
+    expect(userDecorated.index()).toBe(expected)
+
+    expected = 'Name: Mikhail'
+    expect(user.outcome()).toBe(expected)
+    expected = 'Name: Mikhail, Address: 10 Market st., San Bruno, Index: 94111'
+    expect(userDecorated.outcome()).toBe(expected)
+
+    expected = undefined
+    expect(user.address ? user?.address() : undefined).toBe(expected)
+    expected = 'Address: 10 Market st., San Bruno, Index: 94111'
+    expect(userDecorated.address()).toBe(expected)
+  })
+
   it('-- 2020-11-01 Pattern: Decorator  Add responsibilities to objects dynamically', () => {
     const User = function (name) {
       this.userName = `Name: ${name}`
       this.index = function () {
         return '94111'
       }
-      this.outcome = function () {
-        return this.name
+      this.outcome = () => {
+        return this.userName
       }
     }
 
@@ -40,6 +117,8 @@ describe('Structural Patterns', () => {
       }
     }
 
+    const user = new User('Mikhail')
+
     const UserDecorated = decorator(User)
     const userDecorated = new UserDecorated(
       'Mikhail',
@@ -47,14 +126,20 @@ describe('Structural Patterns', () => {
     )
 
     let expected = 'Name: Mikhail'
+    expect(user.userName).toBe(expected)
     expect(userDecorated.userName).toBe(expected)
 
     expected = '94111'
+    expect(user.index()).toBe(expected)
     expect(userDecorated.index()).toBe(expected)
 
+    expected = 'Name: Mikhail'
+    expect(user.outcome()).toBe(expected)
     expected = 'Name: Mikhail, Address: 10 Market st., San Bruno, Index: 94111'
     expect(userDecorated.outcome()).toBe(expected)
 
+    expected = undefined
+    expect(user.address ? user?.address() : undefined).toBe(expected)
     expected = 'Address: 10 Market st., San Bruno, Index: 94111'
     expect(userDecorated.address()).toBe(expected)
   })
