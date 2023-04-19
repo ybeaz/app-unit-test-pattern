@@ -1,6 +1,6 @@
 /**
  * @Description Exploring algorithms
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest template.test`
  */
 
 describe('Algoritms', () => {
