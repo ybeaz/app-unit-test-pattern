@@ -19,6 +19,57 @@
 // handlers
 
 describe('Behavioral Patterns', () => {
+  it('--  2023-09-25 Pattern: Observer  A way of notifying change to a number of functions with args', () => {
+    const GetClicked = function () {
+      this.handlers = []
+
+      this.subscribe = func => {
+        if (this.handlers.find(handler => handler === func)) return
+        this.handlers = [...this.handlers, func]
+      }
+
+      this.unsubscribe = func => {
+        this.handlers = this.handlers.filter(handler => handler !== func)
+      }
+
+      this.fire = params => {
+        this.handlers.forEach(handler => handler(params))
+      }
+    }
+
+    const EventLog = function () {
+      this.log = []
+
+      this.setLog = num => {
+        this.log = [...this.log, num]
+      }
+
+      this.getLog = () => this.log
+    }
+
+    const eventLog = new EventLog()
+    const fn = eventLog.setLog
+
+    const click = new GetClicked()
+
+    click.subscribe(fn)
+    click.fire(1)
+    click.fire(2)
+    click.unsubscribe(fn)
+    click.fire(3)
+    click.fire(4)
+    click.subscribe(fn)
+    click.subscribe(fn)
+    click.fire(5)
+    click.fire(6)
+
+    const log = eventLog.getLog()
+    // console.info('eventLog [67]', { log, eventLog })
+
+    const expected = [1, 2, 5, 6]
+    expect(log).toEqual(expected)
+  })
+
   it('--  2020-12-26 Pattern: Observer  A way of notifying change to a number of classes', () => {
     class Click {
       handlers = []
