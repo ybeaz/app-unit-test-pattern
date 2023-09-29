@@ -1,7 +1,7 @@
 /**
  * @Description ...
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 12_Proxy.test`
  */
 
 describe('Structural Patterns', () => {
@@ -24,6 +24,7 @@ describe('Structural Patterns', () => {
 
     function GeoProxy() {
       this.geocoder = new GeoCoder()
+      console.info('12_Proxy.test [27]', { 'this.geocoder': this.geocoder })
       this.geocache = {}
       this.getLatLng = function (city) {
         if (!this.geocache[city]) {

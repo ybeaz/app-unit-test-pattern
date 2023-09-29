@@ -10,7 +10,40 @@
 // getInstance
 
 describe('Creational Patterns, Singleton', () => {
-  it('--  2023-04-07 Pattern: Singleton.	A class of which only a single instance can exist', () => {
+  it('--  2023-09-27 Pattern: Singleton. A class/function of which only a single instance can exist', () => {
+    const Sum = function (x) {
+      return {
+        sumX(y) {
+          return x + y
+        },
+      }
+    }
+
+    const Singleton = function (func, args) {
+      this.instance = undefined
+      this.getInstance = () => {
+        if (!this.instance) this.instance = func(args)
+        return this.instance
+      }
+    }
+
+    const a = Sum(2)
+    const b = Sum(2)
+    const s = new Singleton(Sum, 2)
+    const c = s.getInstance()
+    const d = s.getInstance()
+    console.info('05_Singleton.test [35]', { c, d })
+
+    expect(a === b).toBe(false)
+    expect(
+      c === d &&
+        c !== undefined &&
+        d !== undefined &&
+        c.toString() === d.toString()
+    ).toBe(true)
+  })
+
+  it('--  2023-04-07 Pattern: Singleton. A class/function of which only a single instance can exist', () => {
     const Sum = function (x) {
       return {
         sumX(y) {
@@ -35,7 +68,6 @@ describe('Creational Patterns, Singleton', () => {
     const s = Singleton(Sum, 2)
     const c = s.getInstance()
     const d = s.getInstance()
-    console.info('05_Singleton.test [37]', { c, d })
 
     expect(a === b).toBe(false)
     expect(
@@ -46,7 +78,7 @@ describe('Creational Patterns, Singleton', () => {
     ).toBe(true)
   })
 
-  it('--  2021-12-25-2 Pattern: Singleton.	A class of which only a single instance can exist', () => {
+  it('--  2021-12-25-2 Pattern: Singleton. A class/function of which only a single instance can exist', () => {
     class CalcClass {
       mult(x, y) {
         return x * y
@@ -90,7 +122,7 @@ describe('Creational Patterns, Singleton', () => {
     ).toBe(true)
   })
 
-  it('--  2021-12-25 Pattern: Singleton.	A class of which only a single instance can exist', () => {
+  it('--  2021-12-25 Pattern: Singleton. A class/function of which only a single instance can exist', () => {
     const Sum = function (x) {
       return {
         sumX(y) {
@@ -130,7 +162,7 @@ describe('Creational Patterns, Singleton', () => {
     ).toBe(true)
   })
 
-  it('--  2021-02-01 Pattern: Singleton.	A class of which only a single instance can exist', () => {
+  it('--  2021-02-01 Pattern: Singleton. A class/function of which only a single instance can exist', () => {
     class MyClass {
       obj() {
         return {}
@@ -170,7 +202,7 @@ describe('Creational Patterns, Singleton', () => {
     ).toBe(true)
   })
 
-  it('--  2020-11-01 Pattern: Singleton.	A class of which only a single instance can exist', () => {
+  it('--  2020-11-01 Pattern: Singleton. A class/function of which only a single instance can exist', () => {
     function Calculation() {
       return (x, y) => ({ sum: x + y, mult: x * y, div: x / y })
     }
