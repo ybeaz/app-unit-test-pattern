@@ -1,7 +1,8 @@
 /**
- * @Description ...
+ * @description Pattern: Bridge	Separates an object’s interface from its implementation
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 07_Bridge.test`
  */
 
 describe('Structural Patterns', () => {

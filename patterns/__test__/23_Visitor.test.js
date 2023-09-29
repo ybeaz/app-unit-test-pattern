@@ -1,11 +1,12 @@
 /**
- * @Description ...
+ * @description Pattern: Visitor Defines a new operation to a class without change
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 23_Visitor.test`
  */
 
 describe('Behavioral Patterns', () => {
-  it('--  Pattern: Visitor  Defines a new operation to a class without change', () => {
+  it('--  Pattern: Visitor Defines a new operation to a class without change', () => {
     var Employee = function (name, salary, vacation) {
       this.empName = name
       this.salary = salary

@@ -1,11 +1,12 @@
 /**
- * @Description ...
+ * @description Pattern: Strategy Encapsulates an algorithm inside a class
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 21_Strategy.test`
  */
 
 describe('Behavioral Patterns', () => {
-  it('--  Pattern: Strategy  Encapsulates an algorithm inside a class', () => {
+  it('--  Pattern: Strategy Encapsulates an algorithm inside a class', () => {
     function Shipping() {
       this.company = {}
     }

@@ -1,7 +1,8 @@
 /**
- * @Description ...
+ * @description Pattern: Command  Encapsulate a command request as an object
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 14_Command.test`
  */
 
 describe('Behavioral Patterns', () => {

@@ -1,7 +1,8 @@
 /**
- * @Description ...
+ * @description Pattern: Adapter	Match interfaces of different classes
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 06_Adapter.test`
  */
 
 describe('Structural Patterns', () => {

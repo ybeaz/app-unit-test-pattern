@@ -3,3 +3,4 @@ archieve
 yarn.lock
 .DS_Store
 public/stats.json
+archive/

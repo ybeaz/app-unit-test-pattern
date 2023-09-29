@@ -1,7 +1,8 @@
 /**
- * @Description ...
+ * @description Pattern: Iterator  Sequentially access the elements of a collection
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 16_Iterator.test`
  */
 
 describe('Behavioral Patterns', () => {

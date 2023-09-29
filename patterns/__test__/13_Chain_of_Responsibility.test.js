@@ -1,11 +1,12 @@
 /**
- * @Description ...
+ * @description Pattern: Chain of Responsibility.	A way of passing a request between a chain of objects
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
  * @command to run `yarn jest 13_Chain_of_Responsibility.test`
  */
 
 describe('Behavioral Patterns', () => {
-  it('-- Pattern: Chain of Resp III.	A way of passing a request between a chain of objects 2022-01-19', () => {
+  it('-- 2022-01-19 Pattern: Chain of Resp III.	A way of passing a request between a chain of objects', () => {
     const calculator = (initValue = 0) => {
       let res2 = initValue
 

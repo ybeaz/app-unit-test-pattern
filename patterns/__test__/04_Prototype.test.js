@@ -1,7 +1,8 @@
 /**
- * @Description ...
+ * @description Pattern: PrototypeA fully initialized instance to be copied or cloned
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 04_Prototype.test`
  */
 
 describe('Creational Patterns', () => {

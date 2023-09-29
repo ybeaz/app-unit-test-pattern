@@ -1,7 +1,9 @@
 /**
- * @description The intent of the Façade is to provide a high-level interface (properties and methods) that makes a subsystem or toolkit easy to use for the client.
+ * @description Pattern: The intent of the Façade is to provide a high-level interface (properties and methods)
+ *              that makes a subsystem or toolkit easy to use for the client.
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns/facade
- * @test yarn jest patterns/__test__/10_Facade.test.js
+ * @command to run `yarn jest patterns/__test__/10_Facade.test.js`
  */
 
 // Bank

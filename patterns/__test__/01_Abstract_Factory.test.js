@@ -1,11 +1,12 @@
 /**
- * @Description ...
+ * @description Abstract Factory Creates an instance of several families of classes
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 01_Abstract_Factory.test`
  */
 
 describe('Creational Patterns', () => {
-  it('--  Pattern: Abstract Factory  Creates an instance of several families of classes', () => {
+  it('--  Pattern: Abstract Factory Creates an instance of several families of classes', () => {
     function Employee(name) {
       this.name = name
       this.report = function () {

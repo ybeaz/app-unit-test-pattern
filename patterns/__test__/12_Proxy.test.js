@@ -1,5 +1,6 @@
 /**
- * @Description ...
+ * @description  Pattern: Proxy/Cache  An object representing another object
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
  * @command to run `yarn jest 12_Proxy.test`
  */

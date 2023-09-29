@@ -1,9 +1,10 @@
 import { testLogger } from '../../src/Shared/testLogger' // './testLogger'
 
 /**
- * @Description ...
+ * @description Pattern: Mediator  Defines simplified communication between classes
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 17_Mediator.test`
  */
 
 describe('Behavioral Patterns', () => {
