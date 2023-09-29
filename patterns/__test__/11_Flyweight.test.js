@@ -1,7 +1,7 @@
 /**
  * @Description ...
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 11_Flyweight.test`
  */
 
 describe('Structural Patterns', () => {
@@ -35,6 +35,7 @@ describe('Structural Patterns', () => {
       this.processor = processor
       this.memory = memory
       this.tag = tag
+      console.info('11_Flyweight.test [38]', this)
     }
 
     function ComputerCollection() {
