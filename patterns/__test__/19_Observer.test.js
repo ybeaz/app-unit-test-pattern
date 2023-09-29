@@ -1,7 +1,9 @@
 /**
- * @description The Observer pattern offers a subscription model in which objects subscribe to an event and get notified when the event occurs. This pattern is the cornerstone of event driven programming, including JavaScript.
+ * @description Pattern: The Observer pattern offers a subscription model in which objects subscribe to an event and
+ *              get notified when the event occurs. This pattern is the cornerstone of event driven programming, including JavaScript.
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns/observer
- * @test yarn jest patterns/__test__/19_Observer.test.js
+ * @command to run `yarn jest 19_Observer.test`
  */
 
 // Click
@@ -19,7 +21,7 @@
 // handlers
 
 describe('Behavioral Patterns', () => {
-  it('--  2023-09-25 Pattern: Observer  A way of notifying change to a number of functions with args', () => {
+  it('--  2023-09-25 Pattern: Observer. A way of notifying change to a number of functions with args', () => {
     const GetClicked = function () {
       this.handlers = []
 

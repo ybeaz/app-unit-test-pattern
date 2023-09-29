@@ -1,7 +1,9 @@
 /**
- * @description The State pattern provides state-specific logic to a limited set of objects in which each object represents a particular state.
+ * @description Pattern: The State pattern provides state-specific logic to a limited set of objects
+ *              in which each object represents a particular state.
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns/state
- * @test yarn jest patterns/__test__/20_State.test.js
+ * @command to run `yarn jest 20_State.test`
  */
 
 describe('Behavioral Patterns', () => {

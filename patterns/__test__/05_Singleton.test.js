@@ -1,7 +1,8 @@
 /**
- * @description The Singleton Pattern limits the number of instances of a particular object to just one.
+ * @description Pattern: The Singleton Pattern limits the number of instances of a particular object to just one.
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns/singleton
- * @test yarn jest patterns/__test__/05_Singleton.test.js
+ * @command to run `yarn jest 05_Singleton.test`
  */
 
 // Singleton
@@ -9,7 +10,7 @@
 // createInstance
 // getInstance
 
-describe('Creational Patterns, Singleton', () => {
+describe('Creational Patterns: Singleton', () => {
   it('--  2023-09-27 Pattern: Singleton. A class/function of which only a single instance can exist', () => {
     const Sum = function (x) {
       return {

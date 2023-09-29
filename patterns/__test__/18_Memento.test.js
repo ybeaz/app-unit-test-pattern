@@ -1,7 +1,8 @@
 /**
- * @Description ...
+ * @description Pattern: Memento Capture and restore an object's internal state
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 18_Memento.test`
  */
 
 describe('Behavioral Patterns', () => {

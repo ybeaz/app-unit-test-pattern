@@ -1,11 +1,12 @@
 /**
- * @Description ...
+ * @description Pattern: Template Method Defer the exact steps of an algorithm to a subclass
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 22_Template.test`
  */
 
 describe('Behavioral Patterns', () => {
-  it('--  Pattern: Template Method  Defer the exact steps of an algorithm to a subclass', () => {
+  it('--  Pattern: Template Method Defer the exact steps of an algorithm to a subclass', () => {
     function datastore() {
       this.process = function () {
         this.connect()

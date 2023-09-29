@@ -1,7 +1,8 @@
 /**
- * @description The Decorator pattern extends (decorates) an object’s behavior dynamically.
+ * @description Pattern: The Decorator pattern extends (decorates) an object’s behavior dynamically.
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns/decorator
- * @test yarn jest patterns/__test__/09_Decorator.test.js
+ * @command to run `yarn 09_Decorator.test`
  */
 
 // User

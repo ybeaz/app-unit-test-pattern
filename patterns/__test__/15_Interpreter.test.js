@@ -1,7 +1,8 @@
 /**
- * @Description ...
+ * @description Pattern: Interpreter  A way to include language elements in a program
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 15_Interpreter.test`
  */
 
 describe('Behavioral Patterns', () => {

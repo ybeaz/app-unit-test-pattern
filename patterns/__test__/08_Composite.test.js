@@ -1,7 +1,8 @@
 /**
- * @Description ...
+ * @description Pattern: Composite	A tree structure of simple and composite objects
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 08_Composite.test`
  */
 
 describe('Structural Patterns', () => {

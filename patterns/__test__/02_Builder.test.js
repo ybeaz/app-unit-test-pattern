@@ -1,11 +1,12 @@
 /**
- * @Description ...
+ * @description Pattern: Builder Separates object construction from its representation
+ * @narrative
  * @link https://www.dofactory.com/javascript/design-patterns
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest 02_Builder.test`
  */
 
 describe('Creational Patterns', () => {
-  it('--  Pattern: Builder  Separates object construction from its representation', () => {
+  it('--  Pattern: Builder Separates object construction from its representation', () => {
     function Car() {
       this.carType = 'car'
       this.addParts = function () {
