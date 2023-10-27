@@ -1,10 +1,33 @@
 /**
  * @Description Exploring algorithms
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest getElemUnpaired.test`
  */
 
 describe('Algoritms', () => {
-  it('-- getElemUnpaired', () => {
+  it('-- 2023-09-28 getElemUnpaired', () => {
+    const getElemUnpaired = arr =>
+      arr.reduce(
+        (accum, item) =>
+          arr.filter(item2 => item2 === item).length === 1
+            ? [...accum, item]
+            : accum,
+        []
+      )
+
+    const tests = [
+      { input: [2, 3, 4, 5, 4, 3, 2], expected: [5] },
+      { input: [2, 3, 5, 5, 4, 3, 2], expected: [4] },
+      { input: [0, 3, 4, 2, 4, 3, 2], expected: [0] },
+    ]
+
+    tests.forEach(test => {
+      const { input, expected } = test
+      let output = getElemUnpaired(input)
+      expect(output).toEqual(expected)
+    })
+  })
+
+  it('-- 2022-01-18 getElemUnpaired', () => {
     function getElemUnpaired(arr) {
       const objTmp = {}
       const arrNext = []

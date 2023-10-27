@@ -1,10 +1,43 @@
 /**
  * @Description Exploring algorithms
- * @command to run `yarn jest fileName.test`
+ * @command to run `yarn jest getSubSumsArr.test`
  */
 
 describe('Algoritms', () => {
-  it('-- getSubSumsArr', () => {
+  it('-- 2023-09-29 II. getSubSumsArr', () => {
+    const getSubSumsArr = arrIn =>
+      arrIn.reduce(
+        (accum, item, index) => [
+          ...accum,
+          index ? accum[index - 1] + item : item,
+        ],
+        []
+      )
+
+    const arrIn = [1, 2, 3, 4, 5]
+    let output = getSubSumsArr(arrIn)
+    const expected = [1, 3, 6, 10, 15]
+    expect(output).toEqual(expected)
+  })
+
+  it('-- 2023-09-29 I. getSubSumsArr', () => {
+    const getSubSumsArr = arrIn => {
+      let accum = []
+      return arrIn.map((item, index) => {
+        const itemNext = index !== 0 ? accum[index - 1] + item : item
+        accum = [...accum, itemNext]
+        return itemNext
+      })
+    }
+
+    const arrIn = [1, 2, 3, 4, 5]
+    let output = getSubSumsArr(arrIn)
+    const expected = [1, 3, 6, 10, 15]
+    // console.info('getSubSumsArr.test [16]', { expected, output })
+    expect(output).toEqual(expected)
+  })
+
+  it('-- 2022-01-18 getSubSumsArr', () => {
     const getSubSumsArr = arrIn => {
       let output = []
 
@@ -22,7 +55,7 @@ describe('Algoritms', () => {
     expect(output).toEqual(expected)
   })
 
-  it('-- getSubSumsArr with slice', () => {
+  it('-- 2022-01-18 getSubSumsArr with slice', () => {
     const getSubSumsArr = arrIn => {
       let output = []
       let arrSub = []
