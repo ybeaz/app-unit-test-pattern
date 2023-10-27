@@ -57,12 +57,19 @@
  */
 
 describe('Behavioral Patterns', () => {
-  it('--  Pattern: Strategy Encapsulates an algorithm inside a class', () => {
-    function Shipping() {
+  it('--  2023-09-29, 2022-01-29 Pattern: Strategy Encapsulates an algorithm inside a class', () => {
+    type CompanyType = {
+      name: string
+      calculate: () => string
+    }
+
+    type ShippingType = void
+
+    function Shipping(): ShippingType {
       this.company = {}
     }
     Shipping.prototype = {
-      setStrategy(company) {
+      setStrategy(company: CompanyType) {
         this.company = company
       },
       delivery() {
@@ -94,23 +101,23 @@ describe('Behavioral Patterns', () => {
       }
     }
 
-    const ups = new UPS()
-    const usps = new USPS()
-    const fedex = new Fedex()
+    const tests = [
+      { input: new UPS(), expected: { company: 'UPS', fare: '$20' } },
+      { input: new USPS(), expected: { company: 'USPS', fare: '$30' } },
+      { input: new Fedex(), expected: { company: 'Fedex', fare: '$40' } },
+    ]
 
-    const shipping = new Shipping(ups)
+    tests.forEach((test: any) => {
+      const { input, expected } = test
+      const shipping = new Shipping()
+      shipping.setStrategy(input)
 
-    shipping.setStrategy(ups)
-    let expected = { company: 'UPS', fare: '$20' }
-    expect(shipping.delivery()).toEqual(expected)
+      console.info('21_Strategy.test [108]', {
+        'shipping.delivery()': shipping.delivery(),
+      })
 
-    shipping.setStrategy(usps)
-    expected = { company: 'USPS', fare: '$30' }
-    expect(shipping.delivery()).toEqual(expected)
-
-    shipping.setStrategy(fedex)
-    expected = { company: 'Fedex', fare: '$40' }
-    expect(shipping.delivery()).toEqual(expected)
+      expect(shipping.delivery()).toEqual(expected)
+    })
   })
 })
 
